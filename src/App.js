@@ -9,7 +9,7 @@ import activityData from "./activity.json";
 import videosData from "./videos.json";
 import recipesData from "./recipes.json";
 import careGiving from "./caregiving.json";
-
+import unauthenticatedData from "./unauthenticated.json"
 import { extractHostname, groupBy, convertToArray, mergeAll } from "./Utils";
 
 import psl from "psl";
@@ -24,7 +24,8 @@ export default function App() {
     activityData.log.entries,
     videosData.log.entries,
     recipesData.log.entries,
-    careGiving.log.entries
+    careGiving.log.entries,
+    unauthenticatedData.log.entries
   ]);
   entries.forEach(element => {
     element.domain = psl.get(extractHostname(element.request.url));
